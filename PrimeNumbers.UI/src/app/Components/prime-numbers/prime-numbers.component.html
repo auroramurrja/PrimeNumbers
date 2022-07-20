@@ -1,0 +1,23 @@
+
+<div class="container">
+    <div class="ui card">
+      <h2>Prime Numbers Generator</h2>
+      <div class="input-container">
+        <input
+          #numberInput
+          type="number"
+          placeholder="Enter a number..."
+          (input)="onInputChanged(numberInput.value)"
+          [value] = "inputNumber"
+        />
+        <button (click)="generatePrimeNumbers()">Generate</button>
+      </div>
+      <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
+      <h6  #lastNumber>{{lastInputNumber}}</h6>
+      <ul class="list">
+        <li *ngFor="let element of numbersList">
+          {{element}}
+        </li>
+      </ul>
+    </div>
+  </div>
